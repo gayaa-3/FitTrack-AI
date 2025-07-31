@@ -4,13 +4,13 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
 import workoutRoutes from "./routes/workoutRoutes.js";
+import workoutPlanRoute from "./routes/workouPlanRoute.js";
 
 
 dotenv.config({ path: "backend/config/config.env" });
 
 const app = express();
 
-// Middleware
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -20,9 +20,9 @@ app.use(
 
 app.use(express.json());
 
-// Routes
 app.use("/api/users", userRoutes);
 app.use("/api/workouts", workoutRoutes);
+app.use('/api', workoutPlanRoute); 
 
 mongoose
   .connect(process.env.MONGO_URI)

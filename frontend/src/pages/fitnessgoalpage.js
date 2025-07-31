@@ -382,7 +382,7 @@ const renderStep4 = () => (
               {workoutPlan.workouts && workoutPlan.workouts.map((workout, workoutIndex) => (
                 <div key={workoutIndex} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-lg font-semibold text-gray-800">Day {workout.day}: {workout.title}</h4>
+                    <h3 className="text-lg font-semibold text-gray-800">Day {workout.day}: {workout.title}</h3>
                     <span className="text-sm text-gray-500">{workout.duration}</span>
                   </div>
                   {workout.focus && (
@@ -391,12 +391,12 @@ const renderStep4 = () => (
                   
                   {workout.exercises && workout.exercises.length > 0 && (
                     <div>
-                      <h5 className="font-semibold text-gray-700 mb-3">Exercises:</h5>
+                      <h3 className="font-semibold text-gray-700 mb-3">Exercises:</h3>
                       <div className="space-y-3">
                         {workout.exercises.map((exercise, exerciseIndex) => (
                           <div key={exerciseIndex} className="bg-gray-50 p-4 rounded-lg flex items-center justify-between">
                             <div>
-                              <h6 className="font-medium text-gray-800">{exercise.name}</h6>
+                              <h4 className="font-medium text-gray-800">{exercise.name}</h4>
                               <div className="text-sm text-gray-600">
                                 <span className="mr-4">Sets: {exercise.sets}</span>
                                 <span className="mr-4">Reps: {exercise.reps}</span>
@@ -497,7 +497,6 @@ const renderStep4 = () => (
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             AI Fitness Goal Planner
@@ -507,7 +506,6 @@ const renderStep4 = () => (
           </p>
         </div>
 
-        {/* Progress Bar */}
         {!workoutPlan && (
           <div className="max-w-4xl mx-auto mb-8">
             <div className="flex items-center justify-between mb-4">
@@ -567,7 +565,6 @@ const renderStep4 = () => (
                 {currentStep === 2 && renderStep3()}
                 {currentStep === 3 && renderStep4()}
 
-                {/* Navigation Buttons */}
                 {currentStep < 3 && (
                   <div className="flex justify-between pt-8">
                     <button
