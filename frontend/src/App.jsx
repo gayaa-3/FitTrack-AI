@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Home from "./components/Homepage";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+import Home from "./components/Homepage.jsx";
 import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 

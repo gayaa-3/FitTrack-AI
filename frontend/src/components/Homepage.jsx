@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Homepage.css";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,8 +24,13 @@ function Homepage() {
             <a href="#how-it-works" className="nav-link">
               How It Works
             </a>
-            <button className="nav-btn-secondary">Login</button>
-            <button className="nav-btn-primary">Sign Up</button>
+
+            <Link to="/login" className="nav-btn-secondary">
+              Login
+            </Link>
+            <Link to="/signup" className="nav-btn-primary">
+              Sign Up
+            </Link>
           </div>
 
           <div className="nav-toggle" onClick={toggleMenu}>
