@@ -727,8 +727,8 @@ input[type="checkbox"] {
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
-  border-top: 1px solid #4a4a4a;
-  padding-top: 2rem;
+  /* border-top: 1px solid #4a4a4a; */
+  /* padding-top: 2rem; */
 }
 .btn {
   padding: 0.875rem 1.5rem;

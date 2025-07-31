@@ -460,7 +460,7 @@ const renderStep4 = () => (
                 <h3 className="text-lg font-semibold text-orange-800 mb-3">Nutrition Tips</h3>
                 <ul className="space-y-2">
                   {workoutPlan.nutritionTips.map((tip, index) => (
-                    <li key={index} className="text-sm text-orange-700">• {tip}</li>
+                    <li key={index} className="text-sm text-orange-700"> {tip}</li>
                   ))}
                 </ul>
               </div>
@@ -471,7 +471,7 @@ const renderStep4 = () => (
                 <h3 className="text-lg font-semibold text-red-800 mb-3">Safety Tips</h3>
                 <ul className="space-y-2">
                   {workoutPlan.safetyTips.map((tip, index) => (
-                    <li key={index} className="text-sm text-red-700">• {tip}</li>
+                    <li key={index} className="text-sm text-red-700"> {tip}</li>
                   ))}
                 </ul>
               </div>
