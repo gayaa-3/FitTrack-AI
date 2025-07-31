@@ -4,6 +4,7 @@ import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
 import Home from "./components/Homepage.jsx";
 import { ToastContainer } from "react-toastify";
+import FitnessGoalPage from "./pages/fitnessgoalpage.js";
 // import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
+        <Route path="/fitness-goal" element={<FitnessGoalPage />} />
       </Routes>
       {/* <ToastContainer position="top-right" autoClose={3000} /> */}
     </>
