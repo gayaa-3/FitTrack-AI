@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Homepage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Homepage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,6 +8,11 @@ function Homepage() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const navigate = useNavigate(); 
+  const goalSet = () => {
+    navigate('/fitness-goal'); 
+  };
+
 
   return (
     <div>
@@ -53,9 +58,9 @@ function Homepage() {
               our AI-driven platform.
             </p>
             <div className="hero-buttons">
-              <button className="btn-primary">Get Started</button>
+              <button className="btn-primary"  onClick={goalSet}>Get Started</button>
             </div>
-            <div className="hero-stats">
+            {/* <div className="hero-stats">
               <div className="stat">
                 <span className="stat-number">10K+</span>
                 <span className="stat-label">Active Users</span>
@@ -65,7 +70,7 @@ function Homepage() {
                 <span className="stat-number">24/7</span>
                 <span className="stat-label">AI Support</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -190,7 +195,7 @@ function Homepage() {
               Join thousands of users who have already achieved their fitness
               goals with FitTrack-AI
             </p>
-            <button className="btn-primary-large">Get Started Now</button>
+            <button className="btn-primary-large" onClick={goalSet}>Get Started Now</button>
           </div>
         </div>
       </section>

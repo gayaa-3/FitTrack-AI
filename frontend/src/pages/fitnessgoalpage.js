@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { User, Target, Clock, Dumbbell, Heart, Activity, Zap, FileText, Calendar, Weight, Ruler, ChevronRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import './fitnessgoalpage.css';
+import { useNavigate } from 'react-router-dom';
 
 const FitnessGoalPage = () => {
   const [formData, setFormData] = useState({
@@ -109,6 +110,11 @@ const FitnessGoalPage = () => {
   const handleNewExerciseChange = (e) => {
     const { name, value } = e.target;
     setNewExercise(prev => ({ ...prev, [name]: value }));
+  };
+
+  const navigate = useNavigate(); 
+  const proceed = () => {
+    navigate('/'); 
   };
 
   const prevStep = () => {
@@ -473,21 +479,25 @@ const renderStep4 = () => (
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
-            <button
-              onClick={() => {
-                setWorkoutPlan(null);
-                setCurrentStep(1);
-              }}
-              className="flex-1 bg-gray-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-700 transition-colors"
-            >
-              Create New Plan
-            </button>
-            <button
-              onClick={() => window.print()}
-              className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-            >
-              Save/Print Plan
-            </button>
+            <div className="action-buttons-container">
+                <button
+                    onClick={() => {
+                    setWorkoutPlan(null);
+                    setCurrentStep(1);
+                    }}
+                    className="btn btn-secondary-action"
+                >Create New Plan</button>
+
+                <button
+                    onClick={() => window.print()}
+                    className="btn btn-secondary-action"
+                >Save/Print Plan</button>
+
+                <button
+                    onClick={proceed} // You'll need to create this function
+                    className="btn btn-primary-action"
+                >Proceed</button>
+            </div>
           </div>
         </div>
       )}
