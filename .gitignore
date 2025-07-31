@@ -1,0 +1,32 @@
+# Node.js stuff (if any remains)
+node_modules/
+npm-debug.log
+package-lock.json
+.env
+
+
+
+# Flask-related virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE and OS files
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Flask environment
+instance/
+*.db
+
+# Logs
+*.log
