@@ -36,8 +36,7 @@ function App() {
         <div className="hero-container">
           <div className="hero-content">
           <h1 className="hero-title">
-              Transform Your Fitness Journey with
-             <span className="gradient-text"> AI-Powered</span> Workout Tracking
+              Transform Your Fitness Journey with AI-Powered Workout Tracking
             </h1>
             <p className="hero-subtitle">
               Get personalized workout plans, track your progress with intelligent insights, 
@@ -171,11 +170,11 @@ function App() {
               <a href="#features">Features</a>
              
             </div>
-           
-          
+  
           </div>
           
           <div className="footer-bottom">
+
             <p>&copy; 2024 FitTrack-AI. All rights reserved.</p>
           </div>
         </div>
