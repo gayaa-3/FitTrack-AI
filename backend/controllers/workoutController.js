@@ -34,8 +34,6 @@ export const getTodayWorkout = async (req, res) => {
   }
 };
 
-
-
 export const createWorkoutPlan = async (req, res) => {
   try {
     const { userId, goal, exercises } = req.body;
