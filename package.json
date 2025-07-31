@@ -1,0 +1,27 @@
+{
+  "name": "fittrack-ai",
+  "version": "1.0.0",
+  "description": "An intelligent fitness workout logger powered by AI helps users track, manage, and visualize their fitness journey. It features AI-generated workout plans based on user goals, custom workout logging, and rich visualizations like progress charts and calendars. Built using modern web technologies to enhance user experience and motivation through data-driven insights.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gayaa-3/FitTrack-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/gayaa-3/FitTrack-AI/issues"
+  },
+  "homepage": "https://github.com/gayaa-3/FitTrack-AI#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
