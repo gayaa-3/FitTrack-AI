@@ -51,7 +51,7 @@
   
   
   .logo-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -71,11 +71,11 @@
   }
   
   .nav-link:hover {
-    color: #667eea;
+    color: #ff6b35;
   }
   
   .nav-btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -91,8 +91,8 @@
   
   .nav-btn-secondary {
     background: transparent;
-    color: #667eea;
-    border: 2px solid #667eea;
+    color: #ff6b35;
+    border: 2px solid #ff6b35;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     font-weight: 600;
@@ -101,7 +101,7 @@
   }
   
   .nav-btn-secondary:hover {
-    background: #667eea;
+    background: #ff6b35;
     color: white;
     transform: translateY(-2px);
   }
@@ -123,7 +123,7 @@
   /* Hero Section */
   .hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -162,7 +162,7 @@
   }
   
   .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -171,18 +171,18 @@
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
   }
   
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
   }
   
   .btn-secondary {
     background: transparent;
-    color: #667eea;
-    border: 2px solid #667eea;
+    color: #ff6b35;
+    border: 2px solid #ff6b35;
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
@@ -192,7 +192,7 @@
   }
   
   .btn-secondary:hover {
-    background: #667eea;
+    background: #ff6b35;
     color: white;
     transform: translateY(-2px);
   }
@@ -210,7 +210,7 @@
     display: block;
     font-size: 2rem;
     font-weight: 800;
-    color: #667eea;
+    color: #ff6b35;
   }
   
   .stat-label {
@@ -229,11 +229,12 @@
   
   
   .ai-badge {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 107, 53, 0.1);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
+    color: #ff6b35;
   }
   
   
@@ -297,7 +298,8 @@
   
   .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+    border-color: #ff6b35;
   }
   
   .feature-icon {
@@ -338,7 +340,7 @@
   .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -361,10 +363,10 @@
     line-height: 1.6;
   }
   
-  /* CTA  */
+  /* CTA Section */
   .cta {
     padding: 80px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     color: white;
     text-align: center;
   }
@@ -383,7 +385,7 @@
   
   .btn-primary-large {
     background: white;
-    color: #667eea;
+    color: #ff6b35;
     border: none;
     padding: 1.25rem 2.5rem;
     border-radius: 50px;
@@ -428,7 +430,7 @@
   }
   
   .footer-section a:hover {
-    color: white;
+    color: #ff6b35;
   }
   
   .footer-bottom {
@@ -495,11 +497,11 @@
     .cta-content h2 {
       font-size: 2rem;
     }
-  }
-  
+
     .btn-primary, .btn-secondary {
       padding: 0.875rem 1.5rem;
       font-size: 0.9rem;
     }
+  }
   
   
