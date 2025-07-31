@@ -7,6 +7,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
+import workoutRoutes from "./routes/workoutRoutes.js";
+
 
 dotenv.config({ path: "backend/config/config.env" });
 
@@ -18,6 +20,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/users", userRoutes);
+app.use("/api/workouts", workoutRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
