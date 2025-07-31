@@ -168,6 +168,8 @@ function Homepage() {
             <div className="footer-section">
               <h4>Product</h4>
               <a href="#features">Features</a>
+              
+              <a href="#how-it-works">How It Works</a>
              
             </div>
   
