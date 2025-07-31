@@ -722,6 +722,9 @@ input[type="checkbox"] {
   color: #4b5563;
 }
 
+.heads{
+    color: white;
+}
 .action-buttons-container {
   display: flex;
   flex-direction: column;

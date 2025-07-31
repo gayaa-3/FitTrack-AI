@@ -517,7 +517,7 @@ const renderStep4 = () => (
         </div>
 
         {!workoutPlan && (
-          <div className="max-w-4xl mx-auto mb-8">
+          <div className="heads max-w-4xl mx-auto mb-8">
             <div className="flex items-center justify-between mb-4">
               {[1, 2, 3].map((step) => (
                 <div
