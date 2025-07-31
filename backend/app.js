@@ -1,7 +1,3 @@
-// import express from "express";
-// const app = express();
-// export default app;
-// backend/app.js
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
@@ -13,7 +9,13 @@ dotenv.config({ path: "backend/config/config.env" });
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Routes
