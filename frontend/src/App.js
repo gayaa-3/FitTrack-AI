@@ -1,16 +1,21 @@
-// 
-import React from "react";
-import WorkoutVisualization from "./components/WorkoutVisualization";
-import "./App.css"; // If Tailwind is set up here
+
+import React from 'react';
+import Homepage from './components/Homepage.jsx';
 
 function App() {
-  return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="max-w-5xl mx-auto py-10">
-        <WorkoutVisualization />
-      </div>
-    </div>
-  );
+  return <Homepage />;
 }
 
 export default App;
+// import React from 'react';
+// import WorkVisualization from './components/WorkVisualization';
+
+// function App() {
+//   return (
+//     <div>
+//       <WorkVisualization />
+//     </div>
+//   );
+// }
+
+//export default App; 
