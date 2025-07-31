@@ -1,0 +1,132 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fc;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  height: 100%; /* ensures equal height in grid */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Calendar should also behave like a card */
+.calendar-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Input Styling */
+.filters select,
+.filters input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.calendar-day {
+  width: 40px;
+  height: 40px;
+  background-color: #eaeaea;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.workout-day {
+  background-color: #3b82f6;
+  color: white;
+}
+/* Layout Placement */
+.filters {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.line-chart {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.bar-chart {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  grid-area: 50%;
+   
+}
+
+.calendar-container {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Filters */
+.filters select,
+.filters input {
+  width:80%;
+  flex:0.8;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Calendar */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.calendar-day {
+  width: 40px;
+  height: 40px;
+  background-color: #eaeaea;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.workout-day {
+  background-color: red;
+  color: white;
+}
