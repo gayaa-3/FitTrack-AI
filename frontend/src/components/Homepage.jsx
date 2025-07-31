@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Homepage.css';
 
 function Homepage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <div>
     <nav className="navbar">
@@ -17,17 +11,11 @@ function Homepage() {
          <span className="logo-text">FitTrack-AI</span>
           </div>
           
-          <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <div className="nav-menu">
             <a href="#features" className="nav-link">Features</a>
             <a href="#how-it-works" className="nav-link">How It Works</a>
             <button className="nav-btn-secondary">Login</button>
             <button className="nav-btn-primary">Sign Up</button>
-          </div>
-          
-          <div className="nav-toggle" onClick={toggleMenu}>
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
           </div>
         </div>
       </nav>
