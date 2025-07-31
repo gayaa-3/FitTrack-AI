@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import './App.css';
+import './App.css';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,58 +45,21 @@ function App() {
             </p>
             <div className="hero-buttons">
               <button className="btn-primary">Get Started</button>
-              <button className="btn-secondary">Watch Demo</button>
+             
             </div>
             <div className="hero-stats">
               <div className="stat">
                 <span className="stat-number">10K+</span>
                 <span className="stat-label">Active Users</span>
               </div>
-              <div className="stat">
-                <span className="stat-number">95%</span>
-                <span className="stat-label">Success Rate</span>
-              </div>
+             
               <div className="stat">
                 <span className="stat-number">24/7</span>
                 <span className="stat-label">AI Support</span>
               </div>
             </div>
           </div>
-          <div className="hero-image">
-            <div className="mockup-container">
-             <div className="mockup-screen">
-                <div className="mockup-header">
-              <div className="mockup-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-                <div className="mockup-content">
-                  <div className="workout-card">
-                    <div className="workout-header">
-                      <h3>Today's Workout</h3>
-                      <span className="ai-badge">AI Generated</span>
-                    </div>
-                    <div className="workout-exercises">
-                      <div className="exercise-item">
-                        <span className="exercise-name">Bench Press</span>
-                        <span className="exercise-details">3 x 8 @ 135lbs</span>
-                      </div>
-                      <div className="exercise-item">
-                        <span className="exercise-name">Squats</span>
-                    <span className="exercise-details">4 x 10 @ 185lbs</span>
-                      </div>
-                      <div className="exercise-item">
-                        <span className="exercise-name">Deadlifts</span>
-                        <span className="exercise-details">3 x 6 @ 225lbs</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </section>
 
@@ -206,23 +169,10 @@ function App() {
             <div className="footer-section">
               <h4>Product</h4>
               <a href="#features">Features</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#demo">Demo</a>
+             
             </div>
-            
-            <div className="footer-section">
-              <h4>Support</h4>
-              <a href="#help">Help Center</a>
-              <a href="#contact">Contact Us</a>
-              <a href="#docs">Documentation</a>
-            </div>
-            
-            <div className="footer-section">
-              <h4>Company</h4>
-              <a href="#about">About</a>
-              <a href="#blog">Blog</a>
-              <a href="#careers">Careers</a>
-            </div>
+           
+          
           </div>
           
           <div className="footer-bottom">
