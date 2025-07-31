@@ -1,8 +1,7 @@
 import React from 'react';
 import './Homepage.css';
 
-function Homepage() {
-  return (
+function Homepage() {  return (
     <div>
     <nav className="navbar">
        <div className="nav-container">
