@@ -114,7 +114,7 @@ const FitnessGoalPage = () => {
 
   const navigate = useNavigate(); 
   const proceed = () => {
-    navigate('/'); 
+    navigate('/workvisual'); 
   };
 
   const prevStep = () => {
