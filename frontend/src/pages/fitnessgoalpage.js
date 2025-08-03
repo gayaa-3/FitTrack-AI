@@ -298,13 +298,13 @@ const renderStep3 = () => (
       <label>Available Equipment</label>
       <div className="checkbox-grid">
         {equipmentOptions.map((equipment) => (
-          <label key={equipment} className="checkbox-item">
+          <label key={equipment} className="checkbox-item flex items-center space-x-2 p-2 cursor-pointer">
             <input
               type="checkbox"
               checked={formData.availableEquipment.includes(equipment)}
               onChange={() => handleArrayChange('availableEquipment', equipment)}
             />
-            <span>{equipment}</span>
+            <span className='p-3'>{equipment}</span>
           </label>
         ))}
       </div>
@@ -314,13 +314,13 @@ const renderStep3 = () => (
       <label>Preferred Workout Types</label>
       <div className="checkbox-grid">
         {workoutTypes.map((type) => (
-          <label key={type} className="checkbox-item">
+          <label key={type} className="checkbox-item flex items-center space-x-2 p-2 cursor-pointer">
             <input
               type="checkbox"
               checked={formData.preferredWorkoutTypes.includes(type)}
               onChange={() => handleArrayChange('preferredWorkoutTypes', type)}
             />
-            <span>{type}</span>
+            <span className='p-3'>{type}</span>
           </label>
         ))}
       </div>
@@ -331,7 +331,7 @@ const renderStep4 = () => (
   <div className="form-step">
     <div className="form-header red">
       <Heart className="icon" />
-      <h2>Additional Info</h2>
+      <h2>Additional Info & Sumary</h2>
       <p>Any health conditions or special requirements?</p>
     </div>
 
@@ -340,7 +340,7 @@ const renderStep4 = () => (
       <textarea
         value={formData.additionalNotes}
         onChange={(e) => handleInputChange('additionalNotes', e.target.value)}
-        rows={4}
+        rows={1}
         placeholder="Any specific preferences, goals, or requirements for your workout plan..."
       />
     </div>
@@ -358,7 +358,7 @@ const renderStep4 = () => (
       <button
   onClick={generateWorkoutPlan}
   disabled={isGenerating}
-  className="generate-button"
+  className="generate-button px-4 py-2 border border-black bg-gray-300 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
 >
   {isGenerating ? (
     <>
@@ -390,7 +390,7 @@ const renderStep4 = () => (
             <p className="text-gray-700 mb-4">{workoutPlan.planOverview}</p>
             <div className="flex grid-cols-1 md:grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">{workoutPlan.totalDays}</div>
+                <div className="text-2xl font-bold text-purple-600">{workoutPlan.totalDays}</div>
                 <div className="text-sm text-gray-600">Days per week</div>
               </div>
               <div className="text-center">
@@ -398,7 +398,7 @@ const renderStep4 = () => (
                 <div className="text-sm text-gray-600">Per session</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">{formData.fitnessLevel}</div>
+                <div className="text-2xl font-bold text-purple-600">{formData.fitnessLevel}</div>
                 <div className="text-sm text-gray-600">Fitness level</div>
               </div>
             </div>
@@ -423,8 +423,8 @@ const renderStep4 = () => (
             <div className="space-y-4">
               {workoutPlan.workouts && workoutPlan.workouts.map((workout, workoutIndex) => (
                 <div key={workoutIndex} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-gray-800">Day {workout.day}: {workout.title}</h3>
+                  <div className="flex items-center justify-between mb-4 ">  
+                    <h3 className="text-lg font-semibold  text-gray-800">Day {workout.day}: {workout.title}</h3>
                     <span className="text-sm text-gray-500">{workout.duration}</span>
                   </div>
                   {workout.focus && (
@@ -434,9 +434,9 @@ const renderStep4 = () => (
                   {workout.exercises && workout.exercises.length > 0 && (
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-3">Exercises:</h3>
-                      <div className="space-y-3">
+                      <div className="space-y-3 bg-orange-50 p-6 border border-orange-200 rounded-lg ">
                         {workout.exercises.map((exercise, exerciseIndex) => (
-                          <div key={exerciseIndex} className="bg-gray-50 p-4 rounded-lg flex items-center justify-between">
+                          <div key={exerciseIndex} className="bg-gray-50 p-4 rounded-lg border border-orange-200 flex items-center justify-between">
                             <div>
                               <h4 className="font-medium text-gray-800">{exercise.name}</h4>
                               <div className="text-sm text-gray-600">
@@ -463,7 +463,7 @@ const renderStep4 = () => (
 
                   <div className="mt-4">
                     {isAddingExercise.active && isAddingExercise.workoutIndex === workoutIndex ? (
-                      <form onSubmit={handleAddNewExercise} className="space-y-2 p-4 bg-blue-50 rounded-lg">
+                      <form onSubmit={handleAddNewExercise} className="space-y-2 p-4 bg-gray-100 rounded-lg">
                         <h6 className="font-semibold">Add New Exercise</h6>
                         <input type="text" name="name" placeholder="Exercise Name" value={newExercise.name} onChange={handleNewExerciseChange} className="w-full p-2 border rounded" required />
                         <div className="grid grid-cols-3 gap-2">
@@ -473,8 +473,8 @@ const renderStep4 = () => (
                           <input type="text" name="rest" placeholder="Rest" value={newExercise.rest} onChange={handleNewExerciseChange} className="p-2 border rounded" />
                         </div>
                         <div className="flex gap-2">
-                          <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">Save</button>
-                          <button type="button" onClick={() => setIsAddingExercise({ active: false, workoutIndex: null })} className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm">Cancel</button>
+                          <button type="submit" className="px-4 py-2 bg-orange-400 hover:bg-orange-500 text-white rounded-lg text-sm">Save</button>
+                          <button type="button" onClick={() => setIsAddingExercise({ active: false, workoutIndex: null })} className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg text-sm">Cancel</button>
                         </div>
                       </form>
                     ) : (
@@ -493,7 +493,7 @@ const renderStep4 = () => (
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {workoutPlan.nutritionTips && workoutPlan.nutritionTips.length > 0 && (
-              <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
+              <div className="bg-pink-50 p-6 rounded-lg border border-pink-200">
                 <h3 className="text-lg font-semibold text-orange-800 mb-3">Nutrition Tips</h3>
                 <ul className="space-y-2">
                   {workoutPlan.nutritionTips.map((tip, index) => (
@@ -542,7 +542,7 @@ const renderStep4 = () => (
   );
 
   return (
-    <div className="fitness min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className=" min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -564,7 +564,7 @@ const renderStep4 = () => (
                   <div
                     className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
                       step <= currentStep
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-orange-400 text-white'
                         : 'bg-gray-200 text-gray-500'
                     }`}
                   >
@@ -573,7 +573,7 @@ const renderStep4 = () => (
                   {step < 4 && (
                     <div
                       className={`flex-1 h-2 mx-4 rounded ${
-                        step < currentStep ? 'bg-blue-600' : 'bg-gray-200'
+                        step < currentStep ? 'bg-orange-300' : 'bg-gray-200'
                       }`}
                     />
                   )}
@@ -617,13 +617,13 @@ const renderStep4 = () => (
                     <button
                       onClick={prevStep}
                       disabled={currentStep === 1}
-                      className="px-6 py-3 border border-gray-300 rounded-lg font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      className="px-6 py-3 border border-black rounded-lg font-semibold text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     >
                       Previous
                     </button>
                     <button
                       onClick={nextStep}
-                      className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                      className="px-6 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-500 transition-colors flex items-center space-x-2"
                     >
                       <span>Next</span>
                       <ChevronRight className="w-4 h-4" />

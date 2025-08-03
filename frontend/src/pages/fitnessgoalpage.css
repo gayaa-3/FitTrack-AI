@@ -283,8 +283,8 @@ input[type="checkbox"] {
 }
 
 .summary-card {
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(234, 88, 12, 0.05) 100%);
-  border: 1px solid rgba(220, 38, 38, 0.2);
+  /* background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(234, 88, 12, 0.05) 100%); */
+  border: 1px solid #ffbb0033;
   border-radius: 12px;
   padding: 1.5rem;
   margin: 1.5rem 0;
@@ -702,14 +702,14 @@ input[type="checkbox"] {
 
 
 .summary-card {
-  background-color: #eff6ff;
-  border: 1px solid #f63b3b;
+  background-color: #ffffff;
+  border: 1px solid #f7931e;
   padding: 1.5rem;
   border-radius: 0.75rem;
 }
 
 .summary-card h3 {
-  color: #d83c1d;
+  color: #f7931e;
   font-weight: 600;
   margin-bottom: 1rem;
 }
