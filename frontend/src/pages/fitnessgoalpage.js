@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Target, Clock, Dumbbell, Heart, Activity, Zap, FileText, Calendar, Weight, Ruler, ChevronRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { User, Target, Clock, Heart,  Zap,  ChevronRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import './fitnessgoalpage.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const FitnessGoalPage = () => {
   });
 
   const [isAddingExercise, setIsAddingExercise] = useState({ active: false, workoutIndex: null });
-  const [newExercise, setNewExercise] = useState({ name: '', sets: '', reps: '', rest: '' });
+  const [newExercise, setNewExercise] = useState({ name: '', sets: '', reps: '', rest: '', form: ''});
 
   const [currentStep, setCurrentStep] = useState(1);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -122,6 +122,42 @@ const FitnessGoalPage = () => {
     setError('');
   };
 
+   const handleSavePlan = async () => {
+    if (!workoutPlan) {
+      setError("No workout plan to save.");
+      return;
+    }
+
+    try {
+      // You will need to send an auth token for this to work securely
+      const token = localStorage.getItem('token'); // Example of getting a token
+
+      const response = await fetch('http://localhost:8000/api/save-plan', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // 'Authorization': `Bearer ${token}` // Example of sending the token
+        },
+        body: JSON.stringify({
+          planName: "My Custom AI Plan", // You can make this an input field
+          workoutPlan: workoutPlan // This is the modified plan from your state
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to save the plan.');
+      }
+      
+      alert('Plan saved successfully!'); // Or use a more elegant notification
+      // You could navigate the user away after saving, for example:
+      // navigate('/dashboard');
+
+    } catch (err) {
+      setError(err.message);
+    }
+  };
   const generateWorkoutPlan = async () => {
     setIsGenerating(true);
     setError('');
@@ -322,16 +358,16 @@ const renderStep4 = () => (
       <button
   onClick={generateWorkoutPlan}
   disabled={isGenerating}
-  className="w-full bg-gradient-to-r from-red-500 to-orange-500 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:from-red-600 hover:to-orange-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-3"
+  className="generate-button"
 >
   {isGenerating ? (
     <>
-      <Loader2 className="w-5 h-5 animate-spin" />
+      <Loader2 className="generate-load" />
       <span>Generating Your AI Workout Plan...</span>
     </>
   ) : (
     <>
-      <Zap className="w-5 h-5" />
+      <Zap className="generate-zap" />
       <span>Generate AI Workout Plan</span>
     </>
   )}
@@ -433,6 +469,7 @@ const renderStep4 = () => (
                         <div className="grid grid-cols-3 gap-2">
                           <input type="text" name="sets" placeholder="Sets" value={newExercise.sets} onChange={handleNewExerciseChange} className="p-2 border rounded" required />
                           <input type="text" name="reps" placeholder="Reps" value={newExercise.reps} onChange={handleNewExerciseChange} className="p-2 border rounded" required />
+                          <input type="text" name="form" placeholder="Form" value={newExercise.form} onChange={handleNewExerciseChange} className="p-2 border rounded" required />
                           <input type="text" name="rest" placeholder="Rest" value={newExercise.rest} onChange={handleNewExerciseChange} className="p-2 border rounded" />
                         </div>
                         <div className="flex gap-2">
@@ -489,12 +526,12 @@ const renderStep4 = () => (
                 >Create New Plan</button>
 
                 <button
-                    onClick={() => window.print()}
+                    onClick={handleSavePlan} //{() => window.print()}
                     className="btn btn-secondary-action"
                 >Save/Print Plan</button>
 
                 <button
-                    onClick={proceed} // You'll need to create this function
+                    onClick={proceed} 
                     className="btn btn-primary-action"
                 >Proceed</button>
             </div>
@@ -505,7 +542,7 @@ const renderStep4 = () => (
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="fitness min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

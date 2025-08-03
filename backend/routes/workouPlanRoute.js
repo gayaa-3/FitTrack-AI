@@ -1,14 +1,18 @@
 import express from 'express';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
+import WorkoutPlan from '../models/WorkoutPlan.js';
 
-dotenv.config();
+dotenv.config({ path: "backend/config/.env" });
+
+// console.log('Gemini Key:', process.env.GEMINI_API_KEY);
+// console.log('port: ', process.env.PORT);
 const router = express.Router();
 
 router.get('/test', (req, res) => {
   res.status(200).json({ message: 'Backend is running!' });
 });
-const genAI = new GoogleGenerativeAI("AIzaSyB3ze6AI0qFomAhqLecKZHd36muIBc1430");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 router.post('/workout-suggestion', async (req, res) => {
   console.log("AI workout plan generation started...");
   try {
@@ -98,6 +102,42 @@ router.post('/workout-suggestion', async (req, res) => {
       success: false,
       error: 'Failed to generate workout plan due to a server error.'
     });
+  }
+});
+
+router.post('/save-plan', async (req, res) => {
+  try {
+    const { planName, workoutPlan } = req.body;
+    
+    // IMPORTANT: You need to get the logged-in user's ID.
+    // This usually comes from an authentication middleware that decodes a JWT.
+    // I'll use a placeholder here. Replace 'PLACEHOLDER_USER_ID' with your actual user ID logic.
+    const userId = req.user ? req.user.id : '688b257faaefd8767902b8cd';//'PLACEHOLDER_USER_ID'; 
+
+    if (!workoutPlan || !userId) {
+      return res.status(400).json({ error: 'Workout plan and user ID are required.' });
+    }
+
+    // Create a new document using the WorkoutPlan model
+    const newPlan = new WorkoutPlan({
+      userId,
+      planName,
+      // Spread all the properties from the workoutPlan object
+      ...workoutPlan
+    });
+
+    // Save the document to the database
+    await newPlan.save();
+
+    res.status(201).json({ 
+      success: true, 
+      message: 'Workout plan saved successfully!',
+      data: newPlan 
+    });
+
+  } catch (error) {
+    console.error('Error saving workout plan:', error);
+    res.status(500).json({ error: 'Failed to save workout plan.' });
   }
 });
 

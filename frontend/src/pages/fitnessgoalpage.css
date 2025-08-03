@@ -1,15 +1,15 @@
 
-* {
+.fitness * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* body {
+.fitness body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
   color: white; 
-} */
+}
 
 .min-h-screen {
   min-height: 100vh;
@@ -22,7 +22,7 @@
   padding: 0 1rem;
 }
 
-h1 {
+.fitness h1 {
   font-size: 3rem;
   font-weight: 800;
   color: #ffffff;
@@ -31,14 +31,14 @@ h1 {
   letter-spacing: -0.02em;
 }
 
-h2 {
+.fitness h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
 }
 
-h3 {
+.fitness h3 {
   font-size: 1.5rem;
   font-weight: 600;
   color: #1a1a1a;
