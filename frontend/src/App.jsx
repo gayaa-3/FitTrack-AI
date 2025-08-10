@@ -6,6 +6,8 @@ import Home from "./components/Homepage.jsx";
 import { ToastContainer } from "react-toastify";
 import FitnessGoalPage from "./pages/fitnessgoalpage.js";
 import WorkVisualization from "./components/WorkVisualization.jsx";
+import { AuthProvider } from "./context/AuthContext.js";
+import ProtectedRoute from "./components/ProtectedRoute.js";
 // import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
@@ -15,8 +17,13 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
-        <Route path="/workvisual" element={<WorkVisualization />} />
-        <Route path="/fitness-goal" element={<FitnessGoalPage />} />
+        {/* Protected Routes */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/workvisual" element={<WorkVisualization />} />
+          <Route path="/fitness-goal" element={<FitnessGoalPage />} />
+        </Route>
+        {/* Add a default route, maybe redirect to login or dashboard */}
+        <Route path="*" element={<Login />} />
       </Routes>
       {/* <ToastContainer position="top-right" autoClose={3000} /> */}
     </>

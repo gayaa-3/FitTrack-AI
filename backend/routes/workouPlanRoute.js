@@ -12,7 +12,9 @@ const router = express.Router();
 router.get('/test', (req, res) => {
   res.status(200).json({ message: 'Backend is running!' });
 });
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
 router.post('/workout-suggestion', async (req, res) => {
   console.log("AI workout plan generation started...");
   try {
@@ -83,7 +85,10 @@ router.post('/workout-suggestion', async (req, res) => {
 
     let workoutPlan;
     try {
+      // console.log(responseText);
       const cleanedText = responseText.replace(/```json\n?/, '').replace(/```$/, '').trim();
+      //This line is used to clean up a code block string (usually returned by an AI like Gemini or ChatGPT) that is wrapped in triple backticks and labeled as JSON
+      console.log(cleanedText);
       workoutPlan = JSON.parse(cleanedText);
     } catch (parseError) {
       console.error("AI returned invalid JSON:", responseText);
@@ -107,13 +112,13 @@ router.post('/workout-suggestion', async (req, res) => {
 
 router.post('/save-plan', async (req, res) => {
   try {
-    const { planName, workoutPlan } = req.body;
-    
+    const {userId, planName, workoutPlan } = req.body;
+    // console.log(req.body);
     // IMPORTANT: You need to get the logged-in user's ID.
     // This usually comes from an authentication middleware that decodes a JWT.
     // I'll use a placeholder here. Replace 'PLACEHOLDER_USER_ID' with your actual user ID logic.
-    const userId = req.user ? req.user.id : '688b257faaefd8767902b8cd';//'PLACEHOLDER_USER_ID'; 
-
+    // const userId = req.user ? req.user.id : '68921de81dca11dae7072c8c';//'PLACEHOLDER_USER_ID'; 
+    console.log("received userId: " + userId)
     if (!workoutPlan || !userId) {
       return res.status(400).json({ error: 'Workout plan and user ID are required.' });
     }

@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { User, Target, Clock, Heart,  Zap,  ChevronRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import './fitnessgoalpage.css';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const FitnessGoalPage = () => {
+  // Get the logged-in user's data and token from the context
+  const { user, token } = useAuth();
+
   const [formData, setFormData] = useState({
     
     fitnessGoal: '',
@@ -117,6 +121,11 @@ const FitnessGoalPage = () => {
     navigate('/workvisual'); 
   };
 
+  // Get the userId from the location state.
+  // The '?' is optional chaining to prevent an error if state is null.
+  // const location = useLocation;
+  // const userId = location.state?.userId;
+  // console.log("userId in page" + userId);
   const prevStep = () => {
     setCurrentStep(prev => Math.max(prev - 1, 1));
     setError('');
@@ -127,19 +136,22 @@ const FitnessGoalPage = () => {
       setError("No workout plan to save.");
       return;
     }
+     // Now you can use user._id and the token for secure API calls
+    if (!user) return;
 
     try {
       // You will need to send an auth token for this to work securely
-      const token = localStorage.getItem('token'); // Example of getting a token
+      // const token = localStorage.getItem('token'); // Example of getting a token
 
       const response = await fetch('http://localhost:8000/api/save-plan', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // 'Authorization': `Bearer ${token}` // Example of sending the token
+          'Authorization': `Bearer ${token}` //sending the token for backend verif
         },
         body: JSON.stringify({
           planName: "My Custom AI Plan", // You can make this an input field
+          userId: user._id,
           workoutPlan: workoutPlan // This is the modified plan from your state
         }),
       });

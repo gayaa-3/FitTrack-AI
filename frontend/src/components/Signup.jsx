@@ -68,7 +68,7 @@ const Signup = () => {
           required
           onChange={handleChange}
         />
-        <button className="auth-button" type="submit">
+        <button className="auth-button bg-orange-400 hover:bg-orange-500" type="submit">
           Sign Up
         </button>
         <div className="auth-footer">
