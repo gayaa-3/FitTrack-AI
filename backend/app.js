@@ -7,7 +7,7 @@ import workoutRoutes from "./routes/workoutRoutes.js";
 import workoutPlanRoute from "./routes/workouPlanRoute.js";
 
 
-dotenv.config({ path: "backend/config/config.env" });
+dotenv.config({ path: "config/config.env" });
 
 const app = express();
 

@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
 import WorkoutPlan from '../models/WorkoutPlan.js';
 
-dotenv.config({ path: "backend/config/.env" });
+dotenv.config({ path: "config/.env" });
 
 // console.log('Gemini Key:', process.env.GEMINI_API_KEY);
 // console.log('port: ', process.env.PORT);
