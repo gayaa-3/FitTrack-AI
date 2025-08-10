@@ -18,11 +18,13 @@ const Signup = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  console.log(process.env.REACT_APP_API_URL);
+  
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/users/register",
+        `${process.env.REACT_APP_API_URL}api/users/register`,
         form,
         { withCredentials: true }
       );

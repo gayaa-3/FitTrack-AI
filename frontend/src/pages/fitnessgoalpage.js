@@ -143,7 +143,7 @@ const FitnessGoalPage = () => {
       // You will need to send an auth token for this to work securely
       // const token = localStorage.getItem('token'); // Example of getting a token
 
-      const response = await fetch('http://localhost:8000/api/save-plan', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}api/save-plan`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -175,7 +175,7 @@ const FitnessGoalPage = () => {
     setError('');
     
     try {
-      const response = await fetch('http://localhost:8000/api/workout-suggestion', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}api/workout-suggestion`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
