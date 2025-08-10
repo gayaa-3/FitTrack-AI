@@ -7,12 +7,15 @@
 
 </div>
 
+All right, let's get those tech stack badge colors looking sharp! Here are the corrected colors for your README.md:
+
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Badge"/>
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Badge"/>
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge"/>
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js Badge"/>
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=**white" alt="Express.js Badge"/>
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=**47A248" alt="MongoDB Badge"/>
   <img src="https://img.shields.io/badge/Google_Gemini-8E75B8?style=for-the-badge&logo=google&logoColor=white" alt="Gemini Badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge&logo=law&logoColor=yellow" alt="MIT Badge"/>
 </p>
 
 FitTrack AI is an intelligent fitness workout logger powered by AI helps users track, manage, and visualize their fitness journey. It features AI-generated workout plans based on user goals, custom workout logging, and rich visualizations like progress charts and calendars. Built using modern web technologies to enhance user experience and motivation through data-driven insights. It is a modern web application that leverages the power of Google's Gemini AI to solve a common problem: generic, "one-size-fits-all" workout plans. It provides users with a hyper-personalized, flexible, and engaging fitness experience, moving beyond static templates to create routines that adapt to individual needs and goals.
