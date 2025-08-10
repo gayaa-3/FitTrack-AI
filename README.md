@@ -18,7 +18,12 @@
 FitTrack AI is an intelligent fitness workout logger powered by AI helps users track, manage, and visualize their fitness journey. It features AI-generated workout plans based on user goals, custom workout logging, and rich visualizations like progress charts and calendars. Built using modern web technologies to enhance user experience and motivation through data-driven insights. It is a modern web application that leverages the power of Google's Gemini AI to solve a common problem: generic, "one-size-fits-all" workout plans. It provides users with a hyper-personalized, flexible, and engaging fitness experience, moving beyond static templates to create routines that adapt to individual needs and goals.
 
 ---
+##  Live Demo
 
+You can view the live deployed application here:   
+  https://fit-track-ai-tau.vercel.app/
+
+---
 ##  Key Features
 
 -   **AI-Powered Plan Generation:** Instantly creates detailed workout plans based on user-specific goals, fitness levels, and available equipment.
@@ -68,7 +73,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 2.  **Setup the Backend:**
     ```bash
-    cd FitTrack-AI
+    cd backend
     npm install
     ```
     Create a `.env` file in the `backend` directory and add your environment variables (see below).
